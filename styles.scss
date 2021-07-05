@@ -1,0 +1,158 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+$container-size: 600px;
+$my-blue: rgb(79, 79, 255);
+$my-yellow: rgb(253, 255, 147);
+$my-pink: rgb(249, 189, 255);
+
+$size: 200px;
+
+.lotus {
+	width: $container-size;
+	height: $container-size;
+	border: 1px solid;
+	position: relative;
+}
+
+.lotus {
+	& > div {
+		position: absolute;
+		width: $size;
+		height: $size;
+		border: 1px solid;
+		border-radius: 5% 60% 60% 60%;
+		left: 25%;
+		top: 25%;
+		transform: rotate(45deg);
+		opacity: 50%;
+		transform-origin: $container-size * 0.25 $container-size * 0.25;
+		animation-duration: 3000ms;
+		animation-fill-mode: forwards;
+	}
+	@for $i from 1 through 5 {
+		& > div:nth-child(#{$i}) {
+			@if $i == 1 {
+				background-color: red;
+				animation-name: bloom-#{1};
+			} @else if $i == 2 {
+				background-color: greenyellow;
+				animation-name: bloom-#{2};
+			} @else if $i == 3 {
+				background-color: $my-blue;
+				animation-name: bloom-#{3};
+			} @else if $i == 4 {
+				background-color: $my-yellow;
+				animation-name: bloom-#{4};
+			} @else if $i == 5 {
+				background-color: $my-pink;
+				animation-name: bloom-#{5};
+			}
+		}
+	}
+
+	@for $n from 1 through 5 {
+		@keyframes bloom-#{$n} {
+			0% {
+				transform: rotate(45deg);
+			}
+			100% {
+				transform: rotate(($n - 2) * 45deg);
+			}
+		}
+	}
+
+	// & > div:first-child {
+	// 	background-color: red;
+	// 	animation-name: bloom-1;
+	// 	/* transform: rotate(0); */
+	// }
+	// & > div:nth-child(2) {
+	// 	background-color: greenyellow;
+	// }
+	// & > div:nth-child(3) {
+	// 	background-color: $my-blue;
+	// 	/* transform: rotate(90deg); */
+	// 	animation-name: bloom-2;
+	// }
+	// & > div:nth-child(4) {
+	// 	background-color: $my-yellow;
+	// 	/* transform: rotate(135deg); */
+	// 	animation-name: bloom-4;
+	// }
+	// & > div:nth-child(5) {
+	// 	background-color: $my-pink;
+	// 	/* transform: rotate(-45deg); */
+	// 	animation-name: bloom-5;
+	// }
+}
+
+// .lotus > div:first-child {
+// 	background-color: red;
+// 	animation-name: bloom-1;
+// 	/* transform: rotate(0); */
+// }
+
+// .lotus > div:nth-child(2) {
+// 	background-color: greenyellow;
+// }
+
+// .lotus > div:nth-child(3) {
+// 	background-color: $my-blue;
+// 	/* transform: rotate(90deg); */
+// 	animation-name: bloom-2;
+// }
+
+// .lotus > div:nth-child(4) {
+// 	background-color: $my-yellow;
+// 	/* transform: rotate(135deg); */
+// 	animation-name: bloom-4;
+// }
+// .lotus > div:nth-child(5) {
+// 	background-color: $my-pink;
+// 	/* transform: rotate(-45deg); */
+// 	animation-name: bloom-5;
+// }
+
+// @keyframes bloom-1 {
+// 	0% {
+// 		transform: rotate(45deg);
+// 	}
+
+// 	100% {
+// 		transform: rotate(-45deg);
+// 	}
+// }
+
+// @keyframes bloom-2 {
+// 	0% {
+// 		transform: rotate(45deg);
+// 	}
+
+// 	100% {
+// 		transform: rotate(0);
+// 	}
+// }
+
+// @keyframes bloom-4 {
+// 	0% {
+// 		transform: rotate(45deg);
+// 	}
+
+// 	100% {
+// 		transform: rotate(90deg);
+// 	}
+// }
+
+// @keyframes bloom-5 {
+// 	0% {
+// 		transform: rotate(45deg);
+// 	}
+
+// 	100% {
+// 		transform: rotate(135deg);
+// 	}
+// }

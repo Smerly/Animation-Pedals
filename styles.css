@@ -1,0 +1,89 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lotus {
+  width: 600px;
+  height: 600px;
+  border: 1px solid;
+  position: relative;
+}
+
+.lotus > div {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 1px solid;
+  border-radius: 5% 60% 60% 60%;
+  left: 25%;
+  top: 25%;
+  transform: rotate(45deg);
+  opacity: 50%;
+  transform-origin: 150px 150px;
+  animation-duration: 3000ms;
+  animation-fill-mode: forwards;
+}
+.lotus > div:nth-child(1) {
+  background-color: red;
+  animation-name: bloom-1;
+}
+.lotus > div:nth-child(2) {
+  background-color: greenyellow;
+  animation-name: bloom-2;
+}
+.lotus > div:nth-child(3) {
+  background-color: #4f4fff;
+  animation-name: bloom-3;
+}
+.lotus > div:nth-child(4) {
+  background-color: #fdff93;
+  animation-name: bloom-4;
+}
+.lotus > div:nth-child(5) {
+  background-color: #f9bdff;
+  animation-name: bloom-5;
+}
+@keyframes bloom-1 {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+@keyframes bloom-2 {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes bloom-3 {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes bloom-4 {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@keyframes bloom-5 {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(135deg);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
